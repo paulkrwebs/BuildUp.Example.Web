@@ -1,0 +1,14 @@
+﻿@model BuildUp.Example.Web.ViewModels.Pages.PageViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    @RenderSection("head", required: false)
+    @Html.Partial("_MetaData", Model.MetaData)
+</head>
+<body>
+    @Html.Partial("_Header", Model.Header)
+    @RenderBody()
+    @Html.Partial("_Footer", Model.Footer)
+</body>
+</html>

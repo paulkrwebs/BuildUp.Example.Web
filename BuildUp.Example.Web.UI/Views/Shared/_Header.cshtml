@@ -1,0 +1,9 @@
+﻿@using BuildUp.Example.Web.ViewModels
+@model HeaderViewModel
+
+<ul>
+    @foreach (LinkItemViewModel link in Model.Links)
+    {
+        <li><a href="@link.Uri" title="@link.Title" target="@link.Target">@link.Text</a></li>
+    }
+</ul>
