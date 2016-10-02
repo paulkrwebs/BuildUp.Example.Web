@@ -77,23 +77,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComponentRegistration\ConfigurationExpressionExtensions.cs" />
+    <Compile Include="ComponentRegistration\ContainerRegistrations.cs" />
+    <Compile Include="ComponentRegistration\FluentHanderRegistration`1.cs" />
     <Compile Include="ComponentRegistration\FluentHanderRegistration`2.cs" />
     <Compile Include="ComponentResolver.cs" />
     <Compile Include="Components\FooterComponent`2.cs" />
     <Compile Include="Components\HeaderComponent`2.cs" />
-    <Compile Include="Components\MetaDataComponent.cs" />
+    <Compile Include="Components\LatestPostsComponent.cs" />
     <Compile Include="Components\MetaDataComponent`2.cs" />
     <Compile Include="Components\Pages\HomepageComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyMapper.cs" />
+    <Compile Include="ViewModels\Blocks\FeaturedItemViewModel.cs" />
     <Compile Include="ViewModels\FooterViewModel.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
+    <Compile Include="ViewModels\LatestPostsViewModel.cs" />
     <Compile Include="ViewModels\LinkItemViewModel.cs" />
     <Compile Include="ViewModels\MetaDataViewModel.cs" />
     <Compile Include="ViewModels\Pages\HomepageViewModel.cs" />
     <Compile Include="Requests\Pages\HomepageRequest.cs" />
     <Compile Include="ViewModels\Pages\PageViewModel.cs" />
     <Compile Include="Requests\Request.cs" />
+    <Compile Include="ViewModels\PostSummary.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BuildUp.Example.ContentModels\BuildUp.Example.ContentModels.csproj">

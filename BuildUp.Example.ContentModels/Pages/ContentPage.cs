@@ -9,6 +9,7 @@ namespace BuildUp.Example.ContentModels.Pages
 {
     public class ContentPage : Content
     {
+        public int Id { get; set; }
         public MetaDataContent MetaData { get; set; }
         public string Title { get; set; }
     }

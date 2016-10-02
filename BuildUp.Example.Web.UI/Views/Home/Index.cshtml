@@ -1,8 +1,18 @@
-﻿@model  BuildUp.Example.Web.ViewModels.Pages.HomepageViewModel
-    @{
-        ViewBag.Title = "Index";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+﻿@using BuildUp.Example.Web.ViewModels.Pages
+@using BuildUp.Example.Web.ViewModels.Blocks
 
-    <h1>@Model.Title</h1>
-    <h2>@Model.Standfirst</h2>
+@model  HomepageViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Model.Title</h1>
+<h2>@Model.Standfirst</h2>
+
+@Html.Action("Index", "LatestPosts")
+
+@foreach (FeaturedItemViewModel featuredItem in Model.FeaturedItems)
+{
+    @Html.Partial("Blocks/_FeaturedItems", featuredItem)
+}

@@ -28,6 +28,14 @@
                          .AndRegister<THandler>(handlerName);
         }
 
+        public static FluentHanderRegistration<TToCreate> RegisterHandler<TToCreate, THandler>(this IUnityContainer container, string handlerName)
+            where THandler : IComponent<ComponentArgs<TToCreate>>
+        {
+            var accumulator = new FluentHanderRegistration<TToCreate>(container);
+
+            return accumulator.Register<THandler>(handlerName);
+        }
+
         public static FluentHanderRegistration<TToCreate, TFrom> RegisterHandler<TToCreate, TFrom, THandler>(this IUnityContainer container, string handlerName)
             where THandler : IComponent<ComponentArgs<TToCreate, TFrom>>
         {

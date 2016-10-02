@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BuildUp.Example.Web.ViewModels.Blocks;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,7 @@ namespace BuildUp.Example.Web.ViewModels.Pages
         public bool ShowStandfirst { get; set; }
 
         public string Standfirst { get; set; }
+
+        public IEnumerable<FeaturedItemViewModel> FeaturedItems { get; set; }
     }
 }

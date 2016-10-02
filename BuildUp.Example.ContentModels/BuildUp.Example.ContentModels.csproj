@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Blocks\FeaturedItemContent.cs" />
     <Compile Include="MetaDataContent.cs" />
     <Compile Include="Pages\ContentPage.cs" />
     <Compile Include="Content.cs" />

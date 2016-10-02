@@ -1,6 +1,7 @@
 namespace BuildUp.Example.Web.UI.App_Start
 {
     using BuildUp.Example.Web;
+    using ComponentRegistration;
     using Components.Pages;
     using Example.ContentModels.Pages;
     using Microsoft.Practices.Unity;
@@ -46,12 +47,7 @@ namespace BuildUp.Example.Web.UI.App_Start
             container.RegisterType<IPropertyMapper, PropertyMapper>();
             container.RegisterType<IBuilder, Builder>();
 
-            RegisterComponents(container);
-        }
-
-        private static void RegisterComponents(IUnityContainer container)
-        {
-            container.RegisterForPage<HomepageViewModel, HomepageContent, HomepageComponent>("HomepageComponent");
+            ContainerRegistrations.RegisterComponents(container);
         }
     }
 }

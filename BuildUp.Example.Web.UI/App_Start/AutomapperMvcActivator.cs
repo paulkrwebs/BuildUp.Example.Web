@@ -1,4 +1,5 @@
 using AutoMapper;
+using BuildUp.Example.Web.ComponentRegistration;
 using Microsoft.Practices.Unity.Mvc;
 using System.Linq;
 using System.Web.Mvc;
@@ -13,7 +14,7 @@ namespace BuildUp.Example.Web.UI.App_Start
         public static void Start()
         {
             // Marker types for assemblies
-            Mapper.Initialize(cfg => cfg.AddProfiles(new[] { typeof(PropertyMapper) }));
+            Mapper.Initialize(cfg => cfg.AddProfiles(new[] { typeof(ContainerRegistrations) }));
         }
 
         /// <summary>Disposes the Unity container when the application is shut down.</summary>

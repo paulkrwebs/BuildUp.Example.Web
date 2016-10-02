@@ -1,0 +1,13 @@
+﻿@using BuildUp.Example.Web.ViewModels
+@model LatestPostsViewModel
+
+<h3>Latest Posts</h3>
+<ul>
+    @foreach (PostSummary postsummary in Model.PostSummaries)
+    {
+        <li>
+            <span class="title">@postsummary.Title</span>
+            <span class="summary">@postsummary.Summary</span>
+        </li>
+    }
+</ul>
