@@ -23,10 +23,11 @@
         public void Handle(ComponentArgs<HomepageViewModel, HomepageContent> arg1)
         {
             // TODO Guard method and unit test
-            _propertyMapper.Map(arg1.From, arg1.To);
+            arg1.ToBuild = arg1.ToBuild ?? new HomepageViewModel();
+            _propertyMapper.Map(arg1.From, arg1.ToBuild);
 
-            arg1.To.ShowStandfirst = string.IsNullOrWhiteSpace(arg1.To.Standfirst);
-            arg1.To.FeaturedItems = BuildFeaturedItems(arg1.From);
+            arg1.ToBuild.ShowStandfirst = string.IsNullOrWhiteSpace(arg1.ToBuild.Standfirst);
+            arg1.ToBuild.FeaturedItems = BuildFeaturedItems(arg1.From);
         }
 
         private IEnumerable<FeaturedItemViewModel> BuildFeaturedItems(HomepageContent from)

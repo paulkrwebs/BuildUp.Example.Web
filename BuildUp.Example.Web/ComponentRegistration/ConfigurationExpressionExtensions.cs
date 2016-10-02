@@ -2,15 +2,16 @@
 {
     using BuildUp.Example.Web.ViewModels.Pages;
     using Components;
-    using ContentModels;
+
     using Example.ContentModels;
+    using Example.ContentModels.Pages;
     using Microsoft.Practices.Unity;
 
     public static class UnityContainerExtensions
     {
         public static FluentHanderRegistration<TToCreate, TFrom> RegisterForPage<TToCreate, TFrom>(this IUnityContainer container)
-            where TToCreate : PageViewModel
-            where TFrom : Content
+            where TToCreate : PageViewModel, new()
+            where TFrom : ContentPage
         {
             return
                 container.RegisterHandler<TToCreate, TFrom, MetaDataComponent<TToCreate, TFrom>>("MetaDataComponent")
@@ -19,8 +20,8 @@
         }
 
         public static FluentHanderRegistration<TToCreate, TFrom> RegisterForPage<TToCreate, TFrom, THandler>(this IUnityContainer container, string handlerName)
-            where TToCreate : PageViewModel
-            where TFrom : Content
+            where TToCreate : PageViewModel, new()
+            where TFrom : ContentPage
             where THandler : IComponent<ComponentArgs<TToCreate, TFrom>>
         {
             return

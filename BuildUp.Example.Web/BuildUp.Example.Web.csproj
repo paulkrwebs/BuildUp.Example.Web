@@ -35,7 +35,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="BuildUp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BuildUp.0.1.0-a0019\lib\net45\BuildUp.dll</HintPath>
+      <HintPath>..\packages\BuildUp.0.1.0-a0023-1\lib\net45\BuildUp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">

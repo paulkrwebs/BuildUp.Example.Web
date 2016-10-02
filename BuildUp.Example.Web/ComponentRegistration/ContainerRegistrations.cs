@@ -10,6 +10,7 @@
     using BuildUp.Example.Web.ViewModels.Pages;
     using Example.ContentModels.Blocks;
     using Microsoft.Practices.Unity;
+    using System.Collections.Generic;
     using ViewModels.Blocks;
 
     public class ContainerRegistrations : Profile
@@ -17,7 +18,10 @@
         public ContainerRegistrations()
         {
             // Setup automapper registrations
-            CreateMap<HomepageContent, HomepageViewModel>().MaxDepth(1);
+            CreateMap<HomepageContent, HomepageViewModel>().MaxDepth(1)
+                .ForMember(x => x.MetaData, c => c.Ignore())
+                .ForMember(x => x.FeaturedItems, c => c.Ignore()); // We are going to deal with the mapping so ignore this property
+
             CreateMap<MetaDataContent, MetaDataViewModel>().MaxDepth(1);
             CreateMap<FeaturedItemContent, FeaturedItemViewModel>().MaxDepth(1);
         }
@@ -37,7 +41,7 @@
         private static void RegisterBlocks(IUnityContainer container)
         {
             container.RegisterHandler<FeaturedItemViewModel, FeaturedItemContent,
-                            PropertyMapperComponent<FeaturedItemViewModel, FeaturedItemContent>>("PropertyMapperComponent<FeaturedItemViewModel, FeaturedItemContent>");
+                           PropertyMapperComponent<FeaturedItemViewModel, FeaturedItemContent>>("PropertyMapperComponent<FeaturedItemViewModel, FeaturedItemContent>");
         }
 
         private static void RegisterSubComponents(IUnityContainer container)

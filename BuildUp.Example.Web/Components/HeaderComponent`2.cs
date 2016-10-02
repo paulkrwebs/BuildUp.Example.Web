@@ -8,7 +8,7 @@
     using ViewModels;
 
     public class HeaderComponent<TToCreate, TFrom> : IComponent<ComponentArgs<TToCreate, TFrom>>
-        where TToCreate : PageViewModel
+        where TToCreate : PageViewModel, new()
         where TFrom : Content
     {
         public void Handle(ComponentArgs<TToCreate, TFrom> arg1)
@@ -20,8 +20,9 @@
                 new LinkItemViewModel() { Text = "People", Uri = "/people" },
             };
 
-            arg1.To.Header = arg1.To.Header ?? new HeaderViewModel();
-            arg1.To.Header.Links = links;
+            arg1.ToBuild = arg1.ToBuild ?? new TToCreate();
+            arg1.ToBuild.Header = arg1.ToBuild.Header ?? new HeaderViewModel();
+            arg1.ToBuild.Header.Links = links;
         }
     }
 }

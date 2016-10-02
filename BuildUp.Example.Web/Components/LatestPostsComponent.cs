@@ -12,7 +12,8 @@ namespace BuildUp.Example.Web.Components
         public void Handle(ComponentArgs<LatestPostsViewModel> arg1)
         {
             // load from database
-            arg1.ToHandle.PostSummaries = new List<PostSummary>()
+            arg1.ToBuild = arg1.ToBuild ?? new LatestPostsViewModel();
+            arg1.ToBuild.PostSummaries = new List<PostSummary>()
             {
                 new PostSummary() { Title = "Title 1", Summary = "summary 1" },
                 new PostSummary() { Title = "Title 2", Summary = "summary 2" },

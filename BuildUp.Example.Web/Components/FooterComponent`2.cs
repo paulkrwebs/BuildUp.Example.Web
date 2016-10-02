@@ -8,7 +8,7 @@
     using ViewModels;
 
     public class FooterComponent<TToCreate, TFrom> : IComponent<ComponentArgs<TToCreate, TFrom>>
-        where TToCreate : PageViewModel
+        where TToCreate : PageViewModel, new()
         where TFrom : Content
     {
         public void Handle(ComponentArgs<TToCreate, TFrom> arg1)
@@ -20,8 +20,9 @@
                 new LinkItemViewModel() { Text = "Terms &amp; Conditions", Uri = "/terms-and-conditions" },
             };
 
-            arg1.To.Footer = arg1.To.Footer ?? new FooterViewModel();
-            arg1.To.Footer.Links = links;
+            arg1.ToBuild = arg1.ToBuild ?? new TToCreate();
+            arg1.ToBuild.Footer = arg1.ToBuild.Footer ?? new FooterViewModel();
+            arg1.ToBuild.Footer.Links = links;
         }
     }
 }

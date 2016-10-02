@@ -48,7 +48,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="BuildUp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\BuildUp.0.1.0-a0019\lib\net45\BuildUp.dll</HintPath>
+      <HintPath>..\packages\BuildUp.0.1.0-a0023-1\lib\net45\BuildUp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
